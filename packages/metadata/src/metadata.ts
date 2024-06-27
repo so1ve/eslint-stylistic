@@ -332,6 +332,19 @@ export const packages: Readonly<PackageInfo[]> = Object.freeze([
         }
       },
       {
+        "name": "line-comment-position",
+        "ruleId": "@stylistic/js/line-comment-position",
+        "originalId": "line-comment-position",
+        "entry": "packages/eslint-plugin-js/rules/line-comment-position/line-comment-position.ts",
+        "docsEntry": "packages/eslint-plugin-js/rules/line-comment-position/README.md",
+        "meta": {
+          "docs": {
+            "description": "Enforce position of line comments",
+            "recommended": false
+          }
+        }
+      },
+      {
         "name": "linebreak-style",
         "ruleId": "@stylistic/js/linebreak-style",
         "originalId": "linebreak-style",
@@ -396,6 +409,20 @@ export const packages: Readonly<PackageInfo[]> = Object.freeze([
           "docs": {
             "description": "Enforce a maximum number of statements allowed per line",
             "recommended": true
+          }
+        }
+      },
+      {
+        "name": "multiline-comment-style",
+        "ruleId": "@stylistic/js/multiline-comment-style",
+        "originalId": "multiline-comment-style",
+        "entry": "packages/eslint-plugin-js/rules/multiline-comment-style/multiline-comment-style.ts",
+        "docsEntry": "packages/eslint-plugin-js/rules/multiline-comment-style/README.md",
+        "meta": {
+          "fixable": "whitespace",
+          "docs": {
+            "description": "Enforce a particular style for multiline comments",
+            "recommended": false
           }
         }
       },
@@ -1076,6 +1103,20 @@ export const packages: Readonly<PackageInfo[]> = Object.freeze([
         }
       },
       {
+        "name": "jsx-function-call-newline",
+        "ruleId": "@stylistic/jsx/jsx-function-call-newline",
+        "originalId": "react/jsx-function-call-newline",
+        "entry": "packages/eslint-plugin-jsx/rules/jsx-function-call-newline/jsx-function-call-newline.ts",
+        "docsEntry": "packages/eslint-plugin-jsx/rules/jsx-function-call-newline/README.md",
+        "meta": {
+          "fixable": "whitespace",
+          "docs": {
+            "description": "Enforce line breaks before and after JSX elements when they are used as arguments to a function.",
+            "recommended": true
+          }
+        }
+      },
+      {
         "name": "jsx-indent",
         "ruleId": "@stylistic/jsx/jsx-indent",
         "originalId": "react/jsx-indent",
@@ -1084,8 +1125,8 @@ export const packages: Readonly<PackageInfo[]> = Object.freeze([
         "meta": {
           "fixable": "whitespace",
           "docs": {
-            "description": "Enforce JSX indentation",
-            "recommended": true
+            "description": "Enforce JSX indentation. Deprecated, use `indent` rule instead.",
+            "recommended": false
           }
         }
       },
@@ -1490,6 +1531,20 @@ export const packages: Readonly<PackageInfo[]> = Object.freeze([
         }
       },
       {
+        "name": "object-curly-newline",
+        "ruleId": "@stylistic/ts/object-curly-newline",
+        "originalId": "@typescript-eslint/object-curly-newline",
+        "entry": "packages/eslint-plugin-ts/rules/object-curly-newline/object-curly-newline.ts",
+        "docsEntry": "packages/eslint-plugin-ts/rules/object-curly-newline/README.md",
+        "meta": {
+          "fixable": "whitespace",
+          "docs": {
+            "description": "Enforce consistent line breaks after opening and before closing braces",
+            "recommended": false
+          }
+        }
+      },
+      {
         "name": "object-curly-spacing",
         "ruleId": "@stylistic/ts/object-curly-spacing",
         "originalId": "@typescript-eslint/object-curly-spacing",
@@ -1500,6 +1555,20 @@ export const packages: Readonly<PackageInfo[]> = Object.freeze([
           "docs": {
             "description": "Enforce consistent spacing inside braces",
             "recommended": true
+          }
+        }
+      },
+      {
+        "name": "object-property-newline",
+        "ruleId": "@stylistic/ts/object-property-newline",
+        "originalId": "@typescript-eslint/object-property-newline",
+        "entry": "packages/eslint-plugin-ts/rules/object-property-newline/object-property-newline.ts",
+        "docsEntry": "packages/eslint-plugin-ts/rules/object-property-newline/README.md",
+        "meta": {
+          "fixable": "whitespace",
+          "docs": {
+            "description": "Enforce placing object properties on separate lines",
+            "recommended": false
           }
         }
       },
@@ -2029,6 +2098,20 @@ export const packages: Readonly<PackageInfo[]> = Object.freeze([
         }
       },
       {
+        "name": "jsx-function-call-newline",
+        "ruleId": "@stylistic/jsx-function-call-newline",
+        "originalId": "react/jsx-function-call-newline",
+        "entry": "packages/eslint-plugin-jsx/rules/jsx-function-call-newline/jsx-function-call-newline.ts",
+        "docsEntry": "packages/eslint-plugin-jsx/rules/jsx-function-call-newline/README.md",
+        "meta": {
+          "fixable": "whitespace",
+          "docs": {
+            "description": "Enforce line breaks before and after JSX elements when they are used as arguments to a function.",
+            "recommended": true
+          }
+        }
+      },
+      {
         "name": "jsx-indent",
         "ruleId": "@stylistic/jsx-indent",
         "originalId": "react/jsx-indent",
@@ -2037,8 +2120,8 @@ export const packages: Readonly<PackageInfo[]> = Object.freeze([
         "meta": {
           "fixable": "whitespace",
           "docs": {
-            "description": "Enforce JSX indentation",
-            "recommended": true
+            "description": "Enforce JSX indentation. Deprecated, use `indent` rule instead.",
+            "recommended": false
           }
         }
       },
@@ -2224,6 +2307,19 @@ export const packages: Readonly<PackageInfo[]> = Object.freeze([
         }
       },
       {
+        "name": "line-comment-position",
+        "ruleId": "@stylistic/line-comment-position",
+        "originalId": "line-comment-position",
+        "entry": "packages/eslint-plugin-js/rules/line-comment-position/line-comment-position.ts",
+        "docsEntry": "packages/eslint-plugin-js/rules/line-comment-position/README.md",
+        "meta": {
+          "docs": {
+            "description": "Enforce position of line comments",
+            "recommended": false
+          }
+        }
+      },
+      {
         "name": "linebreak-style",
         "ruleId": "@stylistic/linebreak-style",
         "originalId": "linebreak-style",
@@ -2302,6 +2398,20 @@ export const packages: Readonly<PackageInfo[]> = Object.freeze([
           "docs": {
             "description": "Require a specific member delimiter style for interfaces and type literals",
             "recommended": true
+          }
+        }
+      },
+      {
+        "name": "multiline-comment-style",
+        "ruleId": "@stylistic/multiline-comment-style",
+        "originalId": "multiline-comment-style",
+        "entry": "packages/eslint-plugin-js/rules/multiline-comment-style/multiline-comment-style.ts",
+        "docsEntry": "packages/eslint-plugin-js/rules/multiline-comment-style/README.md",
+        "meta": {
+          "fixable": "whitespace",
+          "docs": {
+            "description": "Enforce a particular style for multiline comments",
+            "recommended": false
           }
         }
       },

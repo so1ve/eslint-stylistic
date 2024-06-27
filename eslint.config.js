@@ -14,6 +14,7 @@ export default antfu(
     ],
     jsx: true,
     markdown: false,
+    typescript: true,
   },
   {
     rules: {
@@ -37,7 +38,9 @@ export default antfu(
     files: [
       '**/*.test.{js,ts}',
     ],
+    name: 'local/test',
     rules: {
+      'antfu/indent-unindent': 'error',
       'node/prefer-global/process': 'off',
     },
   },
@@ -45,12 +48,14 @@ export default antfu(
     files: [
       '**/*.md',
     ],
+    name: 'local/markdown',
     rules: {
       'style/no-tabs': 'off',
     },
   },
   {
     files: ['packages/eslint-plugin-{js,jsx,ts}/{rules,utils}/**/*.ts'],
+    name: 'local/restricted-imports',
     rules: {
       'no-restricted-imports': ['error', {
         paths: [
@@ -86,8 +91,8 @@ export default antfu(
     rules: {
       ...stylisticConfig.rules,
       'antfu/consistent-list-newline': 'error',
+      'antfu/curly': 'error',
       'antfu/if-newline': 'error',
       'antfu/top-level-function': 'error',
-      'curly': ['error', 'multi-or-nest', 'consistent'],
     },
   })

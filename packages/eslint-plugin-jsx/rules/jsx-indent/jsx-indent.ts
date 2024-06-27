@@ -45,9 +45,12 @@ export default createRule<MessageIds, RuleOptions>({
   meta: {
     type: 'layout',
     docs: {
-      description: 'Enforce JSX indentation',
+      description: 'Enforce JSX indentation. Deprecated, use `indent` rule instead.',
       url: docsUrl('jsx-indent'),
     },
+
+    deprecated: true,
+
     fixable: 'whitespace',
 
     messages,
@@ -271,8 +274,9 @@ export default createRule<MessageIds, RuleOptions>({
       if (!node.parent
         || !node.parent.parent
         || node.parent.parent.type !== 'ExpressionStatement'
-      )
+      ) {
         return false
+      }
 
       const expStmt = node.parent.parent!
       const isInBlockStmtWithinDoExp = (
@@ -305,8 +309,9 @@ export default createRule<MessageIds, RuleOptions>({
         && isNodeFirstInLine(context, node)
         && !isCorrectRightInLogicalExp
         && !isCorrectAlternateInCondExp
-      )
+      ) {
         report(node, indent, nodeIndent)
+      }
     }
 
     /**
@@ -316,6 +321,7 @@ export default createRule<MessageIds, RuleOptions>({
      */
     function checkLiteralNodeIndent(node: Tree.Literal | Tree.JSXText, indent: number) {
       const value = node.value
+      // eslint-disable-next-line regexp/no-super-linear-backtracking, regexp/optimal-quantifier-concatenation
       const regExp = indentType === 'space' ? /\n( *)[\t ]*\S/g : /\n(\t*)[\t ]*\S/g
       const nodeIndentsPerLine = Array.from(
         String(value).matchAll(regExp),
@@ -380,6 +386,9 @@ export default createRule<MessageIds, RuleOptions>({
       const nameIndent = getNodeIndent(node.name)
       const lastToken = context.sourceCode.getLastToken(node.value)!
       const firstInLine = getFirstNodeInLine(context, lastToken)
+      // leave this for `indent` rule to handle
+      if (firstInLine.loc.start.line !== lastToken.loc.start.line)
+        return
       const indent = node.name.loc.start.line === firstInLine.loc.start.line ? 0 : nameIndent
       checkNodesIndent(firstInLine as unknown as ASTNode, indent)
     }
@@ -416,8 +425,9 @@ export default createRule<MessageIds, RuleOptions>({
           !node.parent
           || !node.argument
           || !isJSX(node.argument)
-        )
+        ) {
           return
+        }
 
         let fn: ASTNode | undefined = node.parent
         while (fn && fn.type !== 'FunctionDeclaration' && fn.type !== 'FunctionExpression')
@@ -426,8 +436,9 @@ export default createRule<MessageIds, RuleOptions>({
         if (
           !fn
           || !isReturningJSX(node, context, true)
-        )
+        ) {
           return
+        }
 
         const openingIndent = getNodeIndent(node)
         const closingIndent = getNodeIndent(node, true)

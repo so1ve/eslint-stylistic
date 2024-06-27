@@ -1,16 +1,16 @@
 {
   "name": "@stylistic/eslint-plugin-ts",
-  "version": "1.7.2",
+  "version": "2.3.0",
   "author": "Anthony Fu <anthonyfu117@hotmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/eslint-community/eslint-stylistic#readme",
+  "homepage": "https://github.com/eslint-stylistic/eslint-stylistic#readme",
   "repository": {
     "directory": "packages/eslint-plugin-ts",
     "type": "git",
-    "url": "git+https://github.com/eslint-community/eslint-stylistic.git"
+    "url": "git+https://github.com/eslint-stylistic/eslint-stylistic.git"
   },
   "bugs": {
-    "url": "https://github.com/eslint-community/eslint-stylistic/issues"
+    "url": "https://github.com/eslint-stylistic/eslint-stylistic/issues"
   },
   "exports": {
     ".": {
@@ -38,7 +38,9 @@
     "./rules/member-delimiter-style": "./dist/member-delimiter-style.js",
     "./rules/no-extra-parens": "./dist/no-extra-parens.js",
     "./rules/no-extra-semi": "./dist/no-extra-semi.js",
+    "./rules/object-curly-newline": "./dist/object-curly-newline.js",
     "./rules/object-curly-spacing": "./dist/object-curly-spacing.js",
+    "./rules/object-property-newline": "./dist/object-property-newline.js",
     "./rules/padding-line-between-statements": "./dist/padding-line-between-statements.js",
     "./rules/quote-props": "./dist/quote-props.js",
     "./rules/quotes": "./dist/quotes.js",
@@ -56,7 +58,7 @@
     "rules/**/*.d.ts"
   ],
   "engines": {
-    "node": "^16.0.0 || >=18.0.0"
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
   },
   "scripts": {
     "build": "rimraf dist && rollup --config=rollup.config.mts --configPlugin=rollup-plugin-esbuild",
@@ -68,10 +70,10 @@
   },
   "dependencies": {
     "@stylistic/eslint-plugin-js": "workspace:*",
-    "@types/eslint": "^8.56.8",
-    "@typescript-eslint/utils": "^6.21.0"
+    "@types/eslint": "^8.56.10",
+    "@typescript-eslint/utils": "^7.14.1"
   },
   "devDependencies": {
-    "@typescript-eslint/rule-tester": "^6.21.0"
+    "@typescript-eslint/rule-tester": "^7.14.1"
   }
 }

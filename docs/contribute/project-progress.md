@@ -4,7 +4,7 @@ We are currently at the **Maintenance** stage.
 
 The rules for both JavaScript and TypeScript are migrated and released as beta versions. They are usable already but might need further testing. We are waiting for ESLint's announcement to finalize the rules list. Before that, **be aware that the rules included in `eslint-stylistic` might be changed** if you want to start migrating (we recommend to pin the dependency versions).
 
-Also check out our [project plans](https://github.com/eslint-community/eslint-stylistic/issues/1) for more details.
+Also check out our [project plans](https://github.com/eslint-stylistic/eslint-stylistic/issues/1) for more details.
 
 ## ✅ 1. Migration Infra
 
@@ -30,6 +30,6 @@ The release of v1.0.0 serve as the 1:1 drop-in replacement of the deprecated rul
 
 Bugfixes, beleases, and might introduce new rules based on community feedback.
 
-- Rewrite JS and JSX rules in TypeScript for better long-term maintenance.
-- Fuse JS/TS/JSX rules into a single package, and merge their docs. After this, separate packages for JS/TS/JSX will be deprecated.
-- Introduce an `experimental` mechanism that ships new rules and features as a separate opt-in package, to collect early feedbacks.
+- ✅ Rewrite JS and JSX rules in TypeScript for better long-term maintenance.
+- 👉 Fuse JS/TS/JSX rules into a single package, and merge their docs. After this, separate packages for JS/TS/JSX will be deprecated.
+- 👉 Introduce an `experimental` mechanism that ships new rules and features as a separate opt-in package, to collect early feedbacks.

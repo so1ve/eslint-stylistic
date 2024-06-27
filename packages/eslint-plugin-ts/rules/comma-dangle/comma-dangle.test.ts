@@ -1,15 +1,13 @@
 // this rule tests the new lines, which prettier will want to fix and break the tests
 /* /plugin-test-formatting": ["error", { formatWithPrettier: false }] */
 
-import { RuleTester } from '@typescript-eslint/rule-tester'
-
 import rule from './comma-dangle'
+import { $, run } from '#test'
 
-const ruleTester = new RuleTester({
-  parser: '@typescript-eslint/parser',
-})
+run({
+  name: 'comma-dangle',
+  rule,
 
-ruleTester.run('comma-dangle', rule, {
   valid: [
     // default
     { code: 'enum Foo {}' },
@@ -80,12 +78,12 @@ ruleTester.run('comma-dangle', rule, {
 
     // each options
     {
-      code: `
-const Obj = { a: 1 };
-enum Foo {Bar}
-function Baz<T,>() {}
-type Qux = [string,
-]
+      code: $`
+        const Obj = { a: 1 };
+        enum Foo {Bar}
+        function Baz<T,>() {}
+        type Qux = [string,
+        ]
       `,
       options: [
         {
@@ -96,8 +94,9 @@ type Qux = [string,
       ],
     },
 
-    // https://github.com/eslint-community/eslint-stylistic/issues/35
+    // https://github.com/eslint-stylistic/eslint-stylistic/issues/35
     {
+      filename: 'file.tsx',
       code: 'const id = <T,>(x: T) => x;',
       parserOptions: {
         ecmaFeatures: {
@@ -273,7 +272,7 @@ type Qux = [string,
       errors: [{ messageId: 'unexpected' }],
     },
 
-    // https://github.com/eslint-community/eslint-stylistic/issues/35
+    // https://github.com/eslint-stylistic/eslint-stylistic/issues/35
     // When there is more than one generic, we don't need to workaround it
     {
       code: 'const id = <T,R,>(x: T) => x;',
